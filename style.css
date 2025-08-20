@@ -1,0 +1,325 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+
+/* Header */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.logo { font-size: 24px; font-weight: bold; color: #0077ff; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: #0077ff; }
+.logo img {
+  height: 50px;
+}
+/* Nút menu */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* Ẩn trên desktop */
+}
+
+/* Desktop menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #0077ff;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  header {
+    justify-content: center; /* căn giữa logo */
+  }
+
+  /* Logo căn giữa */
+  .logo {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Nút menu sang phải */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+
+  /* Menu ẩn */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+  }
+
+  /* Khi bật class .show thì hiện menu */
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+/* Hero */
+.hero {
+  height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: linear-gradient(to right, #0077ff, #00c6ff);
+  color: #fff; text-align: center; padding: 20px;
+}
+.hero h1 { font-size: 48px; margin-bottom: 15px; }
+.hero p { font-size: 20px; margin-bottom: 25px; }
+.btn {
+  background: #fff; color: #0077ff; padding: 10px 25px;
+  border-radius: 30px; font-weight: bold; text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover { background: #0077ff; color: #fff; }
+.btn.small { padding: 8px 18px; font-size: 14px; }
+
+/* Fade-in animation */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 1s forwards; }
+.delay { animation-delay: 0.5s; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Services */
+.services { padding: 80px 10%; text-align: center; background: #f9f9f9; }
+.services h2 { font-size: 32px; margin-bottom: 40px; }
+.service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-card {
+  background: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden; transition: transform 0.3s;
+}
+.service-card:hover { transform: translateY(-10px); }
+.service-card img { width: 100%; height: auto; }
+.service-card h3 { font-size: 22px; margin: 15px 0; }
+.service-card p { padding: 0 15px 20px; }
+
+/* About */
+.about { padding: 80px 10%; text-align: center; }
+
+/* Contact */
+.contact { padding: 80px 10%; text-align: center; background: #f9f9f9; }
+.contact form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+.contact input, .contact textarea {
+  padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;
+}
+
+/* Footer */
+footer { text-align: center; padding: 20px; background: #0077ff; color: #fff; margin-top: 30px; }
+/* Pricing */
+.pricing { 
+  padding: 80px 10%; 
+  background: #fff; 
+  text-align: center; 
+}
+.pricing h2 { 
+  font-size: 32px; 
+  margin-bottom: 30px; 
+  color: #0077ff; 
+}
+.table-container { 
+  overflow-x: auto; 
+}
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: #fdfdfd; 
+  border-radius: 15px; 
+  overflow: hidden; 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+  animation: fadeInUp 1s ease forwards; 
+  opacity: 0; 
+}
+table th, table td { 
+  padding: 15px; 
+  text-align: left; 
+  border-bottom: 1px solid #eee; 
+}
+table th { 
+  background: #0077ff; 
+  color: #fff; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+table tr:hover { 
+  background: #f0f8ff; 
+  transform: scale(1.01); 
+  transition: 0.3s; 
+}
+
+/* Animation cho bảng */
+@keyframes fadeInUp { 
+  from { opacity: 0; transform: translateY(30px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+/* Feedback */
+.feedback {
+  padding: 80px 10%;
+  background: #f9f9f9;
+  text-align: center;
+}
+.feedback h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #0077ff;
+}
+.feedback-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.feedback-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.feedback-card:hover {
+  transform: translateY(-8px);
+}
+.feedback-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.feedback-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.stars {
+  color: #FFD700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.feedback-card p {
+  font-size: 15px;
+  color: #555;
+}
+/* ==== BẢNG GIÁ ==== */
+/* Badge style */
+.badge {
+	padding: 4px 12px;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	font-weight: 500;
+	display: inline-block;
+}
+.badge.faq {
+	background-color: #e0f2fe;
+	color: #0284c7;
+}
+.badge.verify {
+	background-color: #22c55e;
+	color: #ffffff;
+}
+.badge.checkpoint {
+	background-color: #fee2e2;
+	color: #b91c1c;
+}
+.badge.license {
+	background-color: #fef3c7;
+	color: #92400e;
+}
+.badge.seeding {
+	background-color: #ede9fe;
+	color: #5b21b6;
+}
+
+/* Note box */
+.note {
+	max-width: 900px;
+	margin: 30px auto;
+	background: #fefce8;
+	padding: 20px;
+	border-left: 6px solid #facc15;
+	border-radius: 8px;
+	color: #444;
+	font-size: 15px;
+	line-height: 1.6;
+}
+.note strong {
+	color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.pricing-table thead {
+		display: none;
+	}
+	.pricing-table,
+	.pricing-table tbody,
+	.pricing-table tr,
+	.pricing-table td {
+		display: block;
+		width: 100%;
+	}
+	.pricing-table td {
+		padding: 12px 16px;
+		border: none;
+		border-bottom: 1px solid #e5e7eb;
+		position: relative;
+		padding-left: 50%;
+	}
+	.pricing-table td::before {
+		content: attr(data-label);
+		position: absolute;
+		left: 16px;
+		top: 12px;
+		font-weight: bold;
+		color: #6b7280;
+	}
+}
+/* Nút Back to Top */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  background: #0077ff;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Ẩn mặc định */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #0056cc;
+  transform: scale(1.1);
+}
