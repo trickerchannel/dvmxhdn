@@ -10,6 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
         // Close mobile menu after clicking a link
+        const navLinks = document.querySelector('.nav-links');
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
         }
@@ -91,10 +92,30 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+// Mobile menu toggle - FIXED VERSION
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Add animation to hamburger icon
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    });
+
+    // Close menu on window resize if mobile menu is open
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    });
+}
