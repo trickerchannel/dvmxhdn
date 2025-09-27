@@ -388,6 +388,50 @@
 				✓ Thời gian xử lý có thể thay đổi tùy theo tình trạng tài khoản.
 			</div>
 		</section>
+		<!-- FAQ -->
+				<section id="faq" class="faq">
+			<div class="container">
+				<h2 class="section-title fade-in">Câu hỏi thường gặp (FAQ)</h2>
+				<div class="faq-container">
+					<div class="faq-item fade-in">
+						<div class="faq-question">
+							<span>Thời gian xử lý dịch vụ mở khóa là bao lâu?</span>
+							<span class="toggle-icon">+</span>
+						</div>
+						<div class="faq-answer">
+							<p>Thời gian xử lý trung bình từ 2 đến 15 ngày. Tuy nhiên, thời gian này có thể thay đổi tùy thuộc vào tình trạng cụ thể và độ phức tạp của từng tài khoản. Chúng tôi sẽ thông báo chi tiết sau khi kiểm tra miễn phí.</p>
+						</div>
+					</div>
+					<div class="faq-item fade-in">
+						<div class="faq-question">
+							<span>Nếu dịch vụ không thành công thì sao?</span>
+							<span class="toggle-icon">+</span>
+						</div>
+						<div class="faq-answer">
+							<p>Chúng tôi cam kết hoàn tiền 100% cho khách hàng nếu không thể thực hiện thành công dịch vụ như đã thỏa thuận. Uy tín và sự hài lòng của bạn là ưu tiên hàng đầu của chúng tôi.</p>
+						</div>
+					</div>
+					<div class="faq-item fade-in">
+						<div class="faq-question">
+							<span>Thông tin của tôi có được bảo mật không?</span>
+							<span class="toggle-icon">+</span>
+						</div>
+						<div class="faq-answer">
+							<p>Chúng tôi cam kết bảo mật tuyệt đối mọi thông tin cá nhân và dữ liệu của khách hàng. Mọi thông tin bạn cung cấp chỉ được sử dụng cho mục đích xử lý dịch vụ và sẽ được xóa an toàn sau khi hoàn thành.</p>
+						</div>
+					</div>
+					<div class="faq-item fade-in">
+						<div class="faq-question">
+							<span>Chính sách bảo hành cho các tài khoản Premium là gì?</span>
+							<span class="toggle-icon">+</span>
+						</div>
+						<div class="faq-answer">
+							<p>Tất cả các tài khoản Premium (Canva, Netflix, Office 365,...) đều được bảo hành trong suốt thời gian sử dụng. Nếu có bất kỳ vấn đề nào phát sinh, chúng tôi sẽ hỗ trợ khắc phục hoặc cung cấp tài khoản thay thế nhanh chóng 24/7.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- Contact Section -->
 		<section id="contact" class="contact">
 			<div class="container">
@@ -427,6 +471,24 @@
 			<i class="fas fa-arrow-up"></i>
 		</a>
 		<script src="scripts.js"></script>
+		<script>
+		// JavaScript for FAQ Toggle
+		document.addEventListener('DOMContentLoaded', function () {
+			const faqItems = document.querySelectorAll('.faq-item');
+			
+			faqItems.forEach(item => {
+				const question = item.querySelector('.faq-question');
+				
+				question.addEventListener('click', () => {
+					const currentlyActive = document.querySelector('.faq-item.active');
+					if (currentlyActive && currentlyActive !== item) {
+						currentlyActive.classList.remove('active');
+					}
+					item.classList.toggle('active');
+				});
+			});
+		});
+		</script>
 		<div class="gtranslate_wrapper"></div>
 		<script>
 		window.gtranslateSettings = {
@@ -442,3 +504,4 @@
 	</body>
 	
 </html>
+
