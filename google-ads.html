@@ -10,989 +10,73 @@
   <meta property="og:title" content="Khóa học Google Ads Cơ bản - Dành cho người mới bắt đầu">
   <meta property="og:description" content="Học Google Ads từ con số 0. Khóa học thực hành 100%, dễ hiểu, phù hợp cho người chưa có kinh nghiệm.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#4285f4">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="format-detection" content="telephone=no">
   <link rel="icon" type="image/x-icon" href="img/logo.png">
-  <link rel="canonical" href="https://hoanit.com/google-ads-co-ban">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header */
-    header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      position: relative;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #4285f4;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      transition: color 0.3s;
-      padding: 0.5rem;
-    }
-
-    .nav-links a:hover {
-      color: #4285f4;
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
-
-    .mobile-menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: #333;
-      margin: 3px 0;
-      transition: 0.3s;
-      display: block;
-    }
-
-    /* Mobile menu toggle animation */
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #4285f4, #34a853);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
-      transition: all 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 999;
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
-    }
-
-    .back-to-top:active {
-      transform: translateY(-1px);
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-      color: white;
-      padding: 150px 0 80px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .stat-item {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      padding: 1.5rem;
-      border-radius: 10px;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    /* Course Overview */
-    .course-overview {
-      padding: 80px 0;
-      background: #f8f9fa;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #4285f4;
-      margin-bottom: 3rem;
-    }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .overview-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .overview-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .overview-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .overview-item h3 {
-      color: #4285f4;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    /* Course Details */
-    .course-details {
-      padding: 80px 0;
-    }
-
-    .instructor-intro {
-      background: linear-gradient(135deg, #e8f0fe 0%, #f1f8e9 100%);
-      padding: 2rem;
-      border-radius: 10px;
-      margin-bottom: 3rem;
-      border-left: 4px solid #4285f4;
-    }
-
-    .instructor-intro h3 {
-      color: #4285f4;
-      margin-bottom: 1rem;
-    }
-
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .module-item {
-      background: white;
-      border: 2px solid #e8f0fe;
-      border-radius: 10px;
-      padding: 2rem;
-      transition: all 0.3s;
-      position: relative;
-    }
-
-    .module-item:hover {
-      border-color: #4285f4;
-      box-shadow: 0 5px 20px rgba(66,133,244,0.1);
-    }
-
-    .module-number {
-      position: absolute;
-      top: -15px;
-      left: 20px;
-      background: linear-gradient(135deg, #4285f4, #34a853);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .module-item h4 {
-      color: #4285f4;
-      margin: 0.5rem 0 1rem 0;
-      font-size: 1.2rem;
-    }
-
-    .module-item ul {
-      list-style: none;
-    }
-
-    .module-item li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.5rem;
-      position: relative;
-      line-height: 1.5;
-    }
-
-    .module-item li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #34a853;
-      font-weight: bold;
-    }
-
-    /* Learning Outcomes */
-    .learning-outcomes {
-      background: linear-gradient(135deg, #e8f0fe 0%, #f1f8e9 100%);
-      padding: 3rem 2rem;
-      border-radius: 15px;
-      margin: 3rem 0;
-    }
-
-    .learning-outcomes h3 {
-      color: #4285f4;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-
-    .outcomes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .outcome-item {
-      display: flex;
-      align-items: flex-start;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    .outcome-icon {
-      font-size: 1.2rem;
-      color: #34a853;
-      margin-right: 1rem;
-      margin-top: 0.2rem;
-    }
-
-    /* Benefits Section */
-    .course-benefits {
-      margin: 4rem 0;
-    }
-
-    .course-benefits h3 {
-      color: #4285f4;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-
-    .benefits-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      background: linear-gradient(135deg, #e8f0fe 0%, #f1f8e9 100%);
-      padding: 2rem;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .benefit-item:hover {
-      transform: translateY(-3px);
-    }
-
-    .benefit-icon {
-      font-size: 2rem;
-      margin-right: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .benefit-content h4 {
-      color: #4285f4;
-      margin-bottom: 0.5rem;
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-      color: white;
-      padding: 3rem 2rem;
-      border-radius: 15px;
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    .cta-section h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .cta-subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .price-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .original-price {
-      font-size: 1.2rem;
-      text-decoration: line-through;
-      opacity: 0.7;
-    }
-
-    .current-price {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #ffeb3b;
-    }
-
-    .discount-badge {
-      background: #ff5722;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    .cta-button {
-      background: white;
-      color: #4285f4;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      display: inline-block;
-      margin: 1rem 0;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .guarantee {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-top: 1rem;
-    }
-
-    /* FAQ Section */
-    .faq {
-      padding: 80px 0;
-      background: #f8f9fa;
-    }
-
-    .faq h2 {
-      text-align: center;
-      color: #4285f4;
-      margin-bottom: 3rem;
-      font-size: 2.5rem;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .faq-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .faq-item:hover {
-      transform: translateY(-3px);
-    }
-
-    .faq-item h4 {
-      color: #4285f4;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 15px;
-      }
-
-      /* Mobile Navigation */
-      .mobile-menu-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: left 0.3s ease;
-        gap: 2rem;
-        z-index: 1000;
-      }
-
-      .nav-links.active {
-        left: 0;
-      }
-
-      .nav-links a {
-        font-size: 1.3rem;
-        padding: 1rem 2rem;
-        width: auto;
-        text-align: center;
-        border: none;
-        color: #333;
-        font-weight: 500;
-      }
-
-      .nav-links a:hover {
-        color: #4285f4;
-        background: rgba(66, 133, 244, 0.1);
-        border-radius: 10px;
-      }
-
-      /* Back to Top Mobile */
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 16px;
-      }
-
-      /* Hero Section Mobile */
-      .hero {
-        padding: 100px 0 60px;
-      }
-      
-      .hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.4;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .stat-item {
-        padding: 1rem;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-      }
-
-      /* Sections Mobile */
-      .course-overview,
-      .course-details,
-      .faq {
-        padding: 60px 0;
-      }
-
-      .section-title {
-        font-size: 2rem;
-        line-height: 1.3;
-        margin-bottom: 2rem;
-      }
-
-      .overview-grid,
-      .module-grid,
-      .outcomes-grid,
-      .benefits-list,
-      .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .overview-item,
-      .module-item,
-      .benefit-item,
-      .faq-item {
-        padding: 1.5rem;
-      }
-
-      .overview-item h3,
-      .module-item h4,
-      .faq-item h4 {
-        font-size: 1.2rem;
-      }
-
-      .instructor-intro,
-      .learning-outcomes,
-      .course-benefits {
-        padding: 1.5rem;
-        margin: 2rem 0;
-      }
-
-      /* CTA Section Mobile */
-      .cta-section {
-        padding: 2rem 1rem;
-        margin-top: 3rem;
-      }
-
-      .cta-section h3 {
-        font-size: 1.6rem;
-      }
-
-      .price-info {
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .current-price {
-        font-size: 2rem;
-      }
-
-      .cta-button {
-        padding: 12px 30px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 300px;
-      }
-
-      /* Benefits Mobile */
-      .benefit-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .benefit-icon {
-        margin-right: 0;
-        margin-bottom: 1rem;
-      }
-
-      /* Outcome Items Mobile */
-      .outcome-item {
-        padding: 1rem;
-      }
-
-      .outcome-item p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 10px;
-      }
-
-      /* Back to Top Ultra Mobile */
-      .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-      }
-
-      /* Hero Ultra Mobile */
-      .hero {
-        padding: 90px 0 50px;
-      }
-      
-      .hero h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-      }
-      
-      .hero-subtitle {
-        font-size: 1rem;
-        line-height: 1.4;
-      }
-
-      .stat-item {
-        padding: 0.8rem;
-      }
-
-      .stat-number {
-        font-size: 1.8rem;
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-      }
-
-      /* Sections Ultra Mobile */
-      .course-overview,
-      .course-details,
-      .faq {
-        padding: 40px 0;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .overview-item,
-      .module-item,
-      .benefit-item,
-      .faq-item {
-        padding: 1.2rem;
-      }
-
-      .overview-icon {
-        font-size: 2.5rem;
-      }
-
-      .overview-item h3,
-      .module-item h4 {
-        font-size: 1.1rem;
-      }
-
-      .overview-item p,
-      .module-item li,
-      .faq-item p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      /* Module specific mobile */
-      .module-number {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-        top: -12px;
-        left: 15px;
-      }
-
-      /* Instructor intro mobile */
-      .instructor-intro {
-        padding: 1.2rem;
-        margin-bottom: 2rem;
-      }
-
-      .instructor-intro h3 {
-        font-size: 1.3rem;
-      }
-
-      .instructor-intro p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      /* Learning outcomes mobile */
-      .learning-outcomes {
-        padding: 1.5rem 1rem;
-      }
-
-      .learning-outcomes h3 {
-        font-size: 1.4rem;
-      }
-
-      .outcome-item {
-        padding: 0.8rem;
-        flex-direction: row;
-      }
-
-      .outcome-icon {
-        font-size: 1rem;
-        margin-right: 0.8rem;
-        margin-top: 0.1rem;
-      }
-
-      /* Benefits ultra mobile */
-      .course-benefits h3,
-      .learning-outcomes h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-      }
-
-      /* CTA ultra mobile */
-      .cta-section {
-        padding: 1.5rem 0.8rem;
-        border-radius: 10px;
-      }
-
-      .cta-section h3 {
-        font-size: 1.4rem;
-        line-height: 1.3;
-      }
-
-      .cta-subtitle {
-        font-size: 1rem;
-      }
-
-      .current-price {
-        font-size: 1.8rem;
-      }
-
-      .original-price {
-        font-size: 1rem;
-      }
-
-      .discount-badge {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-      }
-
-      .cta-button {
-        padding: 12px 20px;
-        font-size: 0.95rem;
-      }
-
-      .guarantee {
-        font-size: 0.8rem;
-        line-height: 1.4;
-      }
-
-      /* FAQ ultra mobile */
-      .faq h2 {
-        font-size: 1.8rem;
-      }
-
-      .faq-item h4 {
-        font-size: 1rem;
-        line-height: 1.4;
-      }
-
-      .faq-item p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-      }
-    }
-
-    /* Touch-friendly improvements */
-    @media (hover: none) {
-      .overview-item:hover,
-      .module-item:hover,
-      .benefit-item:hover,
-      .faq-item:hover {
-        transform: none;
-      }
-
-      .cta-button:hover {
-        transform: none;
-      }
-
-      .back-to-top:hover {
-        transform: none;
-      }
-
-      .nav-links a:hover {
-        background: #f0f7ff;
-        color: #4285f4;
-      }
-    }
-
-    /* High DPI displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .hero {
-        background-attachment: scroll;
-      }
-    }
-
-    /* Landscape orientation on mobile */
-    @media (max-width: 768px) and (orientation: landscape) {
-      .hero {
-        padding: 80px 0 40px;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-        padding-top: 60px;
-      }
-    }
-
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav class="container">
       <div class="logo">Hoan IT</div>
-      <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="/" onclick="closeMobileMenu()">Trang chủ</a></li>
-        <li><a href="#courses" onclick="closeMobileMenu()">Khóa học</a></li>
-        <li><a href="#pricing" onclick="closeMobileMenu()">Bảng giá</a></li>
+      <ul class="nav-links">
+        <li><a href="/index.html">Về trang chủ</a></li>
+        <li><a href="#course-overview">Tổng quan</a></li>
+        <li><a href="#course-details">Nội dung học</a></li>
+        <li><a href="#pricing">Đăng ký</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">
-    ↑
-  </button>
+  <a href="#home" id="back-to-top" class="back-to-top" title="Về đầu trang">
+		<i class="fas fa-arrow-up"></i>
+	</a>
 
   <section class="hero" id="home">
     <div class="container">
       <h1> Google Ads Mastery</h1>
       <p class="hero-subtitle">Từ 0 đến có thể tự tạo và quản lý chiến dịch Google Ads hiệu quả | Dễ hiểu | Thực hành 100%</p>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">150+</span>
-          <span class="stat-label">Học viên hoàn thành</span>
+      <div class="hero-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <div class="stat-item" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 10px;">
+          <span class="stat-number" style="display: block; font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">150+</span>
+          <span class="stat-label" style="font-size: 1rem; opacity: 0.9;">Học viên hoàn thành</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">95%</span>
-          <span class="stat-label">Tạo được chiến dịch thành công</span>
+        <div class="stat-item" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 10px;">
+          <span class="stat-number" style="display: block; font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">95%</span>
+          <span class="stat-label" style="font-size: 1rem; opacity: 0.9;">Tạo được chiến dịch thành công</span>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">4.8/5</span>
-          <span class="stat-label">Đánh giá khóa học</span>
+        <div class="stat-item" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 10px;">
+          <span class="stat-number" style="display: block; font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">4.8/5</span>
+          <span class="stat-label" style="font-size: 1rem; opacity: 0.9;">Đánh giá khóa học</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="course-overview" id="courses">
+  <section class="services" id="course-overview">
     <div class="container">
       <h2 class="section-title">Tại sao chọn khóa học Google Ads cơ bản?</h2>
-      <div class="overview-grid">
-        <div class="overview-item">
-          <div class="overview-icon">🎯</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
           <h3>Dễ hiểu cho người mới</h3>
           <p>Giảng dạy từ những khái niệm cơ bản nhất, không cần kiến thức nền tảng về marketing</p>
         </div>
-        <div class="overview-item">
-          <div class="overview-icon">💰</div>
+        <div class="service-card">
+          <div class="service-icon">💰</div>
           <h3>Tiết kiệm chi phí quảng cáo</h3>
           <p>Học cách tối ưu hóa ngân sách, tránh lãng phí tiền quảng cáo không cần thiết</p>
         </div>
-        <div class="overview-item">
-          <div class="overview-icon">📊</div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
           <h3>Thực hành 100%</h3>
           <p>Tạo chiến dịch thực tế ngay trong lớp học, setup campaign trên tài khoản học viên</p>
         </div>
-        <div class="overview-item">
-          <div class="overview-icon">🎓</div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
           <h3>Hỗ trợ tận tình</h3>
           <p>Giảng viên hỗ trợ 24/7, giải đáp mọi thắc mắc về Google Ads</p>
         </div>
@@ -1000,167 +84,145 @@
     </div>
   </section>
 
-  <section class="course-details">
+  <section class="certifications" id="course-details">
     <div class="container">
       <h2 class="section-title">Chi tiết khóa học Google Ads cơ bản</h2>
       
-      <div class="instructor-intro">
-        <h3>Về giảng viên Nguyễn Thái Hoan</h3>
+      <div class="instructor-intro" style="background: linear-gradient(135deg, #e8f0fe 0%, #f1f8e9 100%); padding: 2rem; border-radius: 10px; margin-bottom: 3rem; border-left: 4px solid #b721ff;">
+        <h3 style="color: #333; margin-bottom: 1rem;">Về giảng viên Nguyễn Thái Hoan</h3>
         <p>Giảng viên Nguyễn Thái Hoan – chuyên gia Google Ads với nhiều năm kinh nghiệm triển khai thực chiến cho các dự án đa lĩnh vực. Sở hữu các chứng chỉ quốc tế như <b>Google Ads Measurement, Google Ads Search, AI-Powered Performance Ads và Foundations of Cybersecurity</b>. Với phương pháp giảng dạy thực tiễn, dễ hiểu và tập trung vào hiệu quả, tôi sẽ giúp học viên nắm vững kiến thức và áp dụng thành công Google Ads vào hoạt động kinh doanh.</p>
       </div>
 
       <div class="course-content">
-        <h3>Chương trình học - 5 modules cơ bản</h3>
+        <h3 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #333;">Chương trình học - 5 modules cơ bản</h3>
         
-        <div class="module-grid">
-          <div class="module-item">
-            <div class="module-number">01</div>
-            <h4>Làm quen với Google Ads</h4>
-            <ul>
-              <li>Google Ads là gì? Tại sao nên sử dụng?</li>
-              <li>Các loại quảng cáo cơ bản: Search, Display</li>
-              <li>Tạo tài khoản Google Ads đầu tiên</li>
-              <li>Giao diện Google Ads cơ bản</li>
-              <li>Ngân sách quảng cáo: Nên bắt đầu với bao nhiêu?</li>
-            </ul>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-link">
+              <h4>Module 1: Làm quen với Google Ads</h4>
+              <ul style="text-align: left; list-style-position: inside; padding-left: 1rem;">
+                <li>Google Ads là gì? Tại sao nên sử dụng?</li>
+                <li>Các loại quảng cáo cơ bản: Search, Display</li>
+                <li>Tạo tài khoản Google Ads đầu tiên</li>
+                <li>Giao diện Google Ads cơ bản</li>
+                <li>Ngân sách quảng cáo: Nên bắt đầu với bao nhiêu?</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="module-item">
-            <div class="module-number">02</div>
-            <h4>Tìm từ khóa hiệu quả</h4>
-            <ul>
-              <li>Từ khóa là gì? Tại sao quan trọng?</li>
-              <li>Sử dụng Google Keyword Planner miễn phí</li>
-              <li>Cách chọn từ khóa phù hợp với ngân sách</li>
-              <li>Từ khóa âm tính là gì? Cách sử dụng</li>
-              <li>Thực hành tìm từ khóa cho sản phẩm/dịch vụ</li>
-            </ul>
+          <div class="cert-card">
+            <div class="cert-link">
+              <h4>Module 2: Tìm từ khóa hiệu quả</h4>
+              <ul style="text-align: left; list-style-position: inside; padding-left: 1rem;">
+                <li>Từ khóa là gì? Tại sao quan trọng?</li>
+                <li>Sử dụng Google Keyword Planner miễn phí</li>
+                <li>Cách chọn từ khóa phù hợp với ngân sách</li>
+                <li>Từ khóa âm tính là gì? Cách sử dụng</li>
+                <li>Thực hành tìm từ khóa cho sản phẩm/dịch vụ</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="module-item">
-            <div class="module-number">03</div>
-            <h4>Tạo chiến dịch đầu tiên</h4>
-            <ul>
-              <li>Các bước tạo chiến dịch Search cơ bản</li>
-              <li>Thiết lập vùng địa lý và thời gian chạy</li>
-              <li>Viết quảng cáo hấp dẫn cho người mới</li>
-              <li>Thiết lập trang đích (Landing page)</li>
-              <li>Thực hành tạo chiến dịch hoàn chỉnh</li>
-            </ul>
+          <div class="cert-card">
+            <div class="cert-link">
+              <h4>Module 3: Tạo chiến dịch đầu tiên</h4>
+              <ul style="text-align: left; list-style-position: inside; padding-left: 1rem;">
+                <li>Các bước tạo chiến dịch Search cơ bản</li>
+                <li>Thiết lập vùng địa lý và thời gian chạy</li>
+                <li>Viết quảng cáo hấp dẫn cho người mới</li>
+                <li>Thiết lập trang đích (Landing page)</li>
+                <li>Thực hành tạo chiến dịch hoàn chỉnh</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="module-item">
-            <div class="module-number">04</div>
-            <h4>Quản lý và tối ưu chiến dịch</h4>
-            <ul>
-              <li>Theo dõi hiệu suất chiến dịch cơ bản</li>
-              <li>Các chỉ số quan trọng: CTR, CPC, Conversions</li>
-              <li>Cách điều chỉnh giá thầu đơn giản</li>
-              <li>Tạm dừng từ khóa kém hiệu quả</li>
-              <li>Tối ưu quảng cáo để giảm chi phí</li>
-            </ul>
+          <div class="cert-card">
+             <div class="cert-link">
+              <h4>Module 4: Quản lý và tối ưu chiến dịch</h4>
+              <ul style="text-align: left; list-style-position: inside; padding-left: 1rem;">
+                <li>Theo dõi hiệu suất chiến dịch cơ bản</li>
+                <li>Các chỉ số quan trọng: CTR, CPC, Conversions</li>
+                <li>Cách điều chỉnh giá thầu đơn giản</li>
+                <li>Tạm dừng từ khóa kém hiệu quả</li>
+                <li>Tối ưu quảng cáo để giảm chi phí</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="module-item">
-            <div class="module-number">05</div>
-            <h4>Báo cáo và phát triển</h4>
-            <ul>
-              <li>Đọc báo cáo Google Ads cơ bản</li>
-              <li>Cách tính toán ROI đơn giản</li>
-              <li>Khi nào nên tăng ngân sách?</li>
-              <li>Mở rộng chiến dịch hiệu quả</li>
-              <li>Lộ trình học nâng cao sau khóa cơ bản</li>
-            </ul>
+          <div class="cert-card">
+             <div class="cert-link">
+              <h4>Module 5: Báo cáo và phát triển</h4>
+              <ul style="text-align: left; list-style-position: inside; padding-left: 1rem;">
+                <li>Đọc báo cáo Google Ads cơ bản</li>
+                <li>Cách tính toán ROI đơn giản</li>
+                <li>Khi nào nên tăng ngân sách?</li>
+                <li>Mở rộng chiến dịch hiệu quả</li>
+                <li>Lộ trình học nâng cao sau khóa cơ bản</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="learning-outcomes">
-        <h3>Sau khóa học bạn sẽ làm được gì?</h3>
-        <div class="outcomes-grid">
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
+      <div class="learning-outcomes" style="background: linear-gradient(135deg, #e8f0fe 0%, #f1f8e9 100%); padding: 3rem 2rem; border-radius: 15px; margin: 3rem 0;">
+        <h3 style="color: #333; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Sau khóa học bạn sẽ làm được gì?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          <div style="display: flex; align-items: flex-start; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem; color: #28a745; margin-right: 1rem; margin-top: 0.2rem;">✅</span>
             <p><strong>Tự tạo chiến dịch Google Ads</strong> cho sản phẩm/dịch vụ của riêng mình</p>
           </div>
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
+          <div style="display: flex; align-items: flex-start; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem; color: #28a745; margin-right: 1rem; margin-top: 0.2rem;">✅</span>
             <p><strong>Tiết kiệm 50-70% chi phí</strong> so với thuê agency làm</p>
           </div>
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
+          <div style="display: flex; align-items: flex-start; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem; color: #28a745; margin-right: 1rem; margin-top: 0.2rem;">✅</span>
             <p><strong>Tự quản lý và tối ưu</strong> chiến dịch hàng ngày</p>
           </div>
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
+          <div style="display: flex; align-items: flex-start; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem; color: #28a745; margin-right: 1rem; margin-top: 0.2rem;">✅</span>
             <p><strong>Hiểu rõ từng đồng chi phí</strong> và kiểm soát ngân sách hiệu quả</p>
           </div>
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
-            <p><strong>Đọc hiểu báo cáo</strong> và đưa ra quyết định tối ưu</p>
-          </div>
-          <div class="outcome-item">
-            <div class="outcome-icon">✅</div>
-            <p><strong>Có kiến thức nền tảng</strong> để học các khóa nâng cao</p>
-          </div>
         </div>
-      </div>
-
-      <div class="course-benefits">
-        <h3>Ưu điểm đặc biệt của khóa học</h3>
-        <div class="benefits-list">
-          <div class="benefit-item">
-            <span class="benefit-icon">📚</span>
-            <div class="benefit-content">
-              <h4>Tài liệu dễ hiểu</h4>
-              <p>Bộ tài liệu được thiết kế đặc biệt cho người mới, không có thuật ngữ phức tạp</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-icon">💰</span>
-            <div class="benefit-content">
-              <h4>Tối ưu hóa chi phí</h4>
-              <p>Học cách tối ưu hóa chi phí trên mọi chiến dịch</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-icon">👥</span>
-            <div class="benefit-content">
-              <h4>Nhóm hỗ trợ</h4>
-              <p>Tham gia nhóm Facebook riêng để trao đổi và được hỗ trợ lâu dài</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-section" id="pricing">
-        <h3>Đăng ký ngay hôm nay</h3>
-        <p class="cta-subtitle">Chỉ còn <strong>7 suất cuối</strong> cho lớp tháng 10/2025</p>
-        <div class="price-info">
-          <span class="original-price">7.500.000đ</span>
-          <span class="current-price">6.500.000đ</span>
-          <span class="discount-badge">Giảm ngay <br> 1 triệu</span>
-        </div>
-        <a href="https://bom.so/FIDudo" class="cta-button">Đăng ký khóa học ngay</a>
-        <p class="guarantee">🔒 Cam kết hoàn tiền 100% nếu không tạo được chiến dịch sau khóa học</p>
       </div>
     </div>
   </section>
 
-  <section class="faq">
+  <section class="contact" id="pricing">
     <div class="container">
-      <h2>Câu hỏi thường gặp</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h4>Tôi chưa biết gì về marketing, có học được không?</h4>
-          <p>Hoàn toàn có thể! Khóa học được thiết kế dành riêng cho người mới bắt đầu, giảng dạy từ những khái niệm cơ bản nhất.</p>
+        <h2 class="section-title" style="color: white;">Đăng ký ngay hôm nay</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Chỉ còn <strong>7 suất cuối</strong> cho lớp tháng 10/2025</p>
+        <div class="price-info" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+          <span class="original-price" style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.7;">7.500.000đ</span>
+          <span class="current-price" style="font-size: 2.8rem; font-weight: bold; color: #fff;">6.500.000đ</span>
+          <span class="discount-badge" style="background: #ff5722; padding: 0.5rem 1rem; border-radius: 20px; font-size: 1rem; font-weight: bold;">Giảm ngay 1 triệu</span>
         </div>
-        <div class="faq-item">
-          <h4>Cần chuẩn bị gì trước khi học?</h4>
-          <p>Chỉ cần máy tính có kết nối internet và Gmail. Chúng tôi sẽ hướng dẫn tạo tài khoản Google Ads trong buổi học đầu tiên.</p>
+        <a href="https://bom.so/FIDudo" class="cta-button">Đăng ký khóa học ngay</a>
+        <p style="font-size: 1rem; opacity: 0.9; margin-top: 1.5rem;">🔒 Cam kết hoàn tiền 100% nếu không tạo được chiến dịch sau khóa học</p>
+      </div>
+  </section>
+
+  <section class="certifications" id="faq">
+    <div class="container">
+      <h2 class="section-title">Câu hỏi thường gặp</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-link">
+            <h4>Tôi chưa biết gì về marketing, có học được không?</h4>
+            <p>Hoàn toàn có thể! Khóa học được thiết kế dành riêng cho người mới bắt đầu, giảng dạy từ những khái niệm cơ bản nhất.</p>
+          </div>
         </div>
-        <div class="faq-item">
-          <h4>Sau khóa học có được hỗ trợ tiếp không?</h4>
-          <p>Có, bạn được tham gia nhóm Facebook hỗ trợ suốt đời và có thể hỏi giảng viên bất cứ lúc nào.</p>
+        <div class="cert-card">
+          <div class="cert-link">
+            <h4>Cần chuẩn bị gì trước khi học?</h4>
+            <p>Chỉ cần máy tính có kết nối internet và Gmail. Chúng tôi sẽ hướng dẫn tạo tài khoản Google Ads trong buổi học đầu tiên.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-link">
+            <h4>Sau khóa học có được hỗ trợ tiếp không?</h4>
+            <p>Có, bạn được tham gia nhóm Facebook hỗ trợ suốt đời và có thể hỏi giảng viên bất cứ lúc nào.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1173,110 +235,6 @@
 			</div>
 		</footer>
 
-  <script>
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      
-      navLinks.classList.toggle('active');
-      mobileToggle.classList.toggle('active');
-    }
-
-    // Close mobile menu when clicking on a link
-    function closeMobileMenu() {
-      const navLinks = document.getElementById('navLinks');
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      
-      navLinks.classList.remove('active');
-      mobileToggle.classList.remove('active');
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const navLinks = document.getElementById('navLinks');
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      const nav = document.querySelector('nav');
-      
-      if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        mobileToggle.classList.remove('active');
-      }
-    });
-
-    // Back to Top functionality
-    const backToTopBtn = document.getElementById('backToTopBtn');
-
-    // Show/hide back to top button
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    });
-
-    // Scroll to top function
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const headerHeight = document.querySelector('header').offsetHeight;
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Add scroll effect to header
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
-      }
-      
-      lastScrollTop = scrollTop;
-    });
-
-    // Prevent scroll when mobile menu is open
-    const navLinks = document.getElementById('navLinks');
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-          } else {
-            document.body.style.overflow = '';
-          }
-        }
-      });
-    });
-
-    observer.observe(navLinks, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
