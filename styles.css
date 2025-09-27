@@ -956,3 +956,56 @@ footer {
         font-size: 1.3rem;
     }
 }
+		/* CSS for FAQ Section */
+		.faq {
+			padding: 60px 0;
+			background-color: #f9f9f9;
+		}
+		.faq .section-title {
+			text-align: center;
+			margin-bottom: 40px;
+			font-size: 2.5rem;
+			color: #333;
+		}
+		.faq-container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		.faq-item {
+			background-color: #fff;
+			margin-bottom: 15px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+			overflow: hidden;
+			transition: all 0.3s ease;
+		}
+		.faq-question {
+			padding: 20px;
+			font-size: 1.2rem;
+			font-weight: 600;
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #333;
+			user-select: none; /* Prevents text selection */
+		}
+		.faq-question .toggle-icon {
+			font-size: 1.4rem;
+			transition: transform 0.3s ease;
+		}
+		.faq-answer {
+			padding: 0 20px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+			color: #555;
+			line-height: 1.6;
+		}
+		.faq-item.active .faq-answer {
+			max-height: 300px; /* Adjust as needed for content length */
+			padding: 0 20px 20px;
+		}
+		.faq-item.active .faq-question .toggle-icon {
+			transform: rotate(45deg);
+		}
