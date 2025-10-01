@@ -10,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
         // Close mobile menu after clicking a link
-        const navLinks = document.querySelector('.nav-links');
         if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
         }
@@ -119,3 +118,31 @@ if (menuToggle && navLinks) {
         }
     });
 }
+
+
+// JavaScript for FAQ Toggle
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            const currentlyActive = document.querySelector('.faq-item.active');
+            if (currentlyActive && currentlyActive !== item) {
+                currentlyActive.classList.remove('active');
+            }
+            item.classList.toggle('active');
+        });
+    });
+});
+
+
+// GTranslate settings
+window.gtranslateSettings = {
+    "default_language": "vi",
+    "native_language_names": true,
+    "detect_browser_language": true,
+    "wrapper_selector": ".gtranslate_wrapper",
+    "flag_style": "3d"
+};
