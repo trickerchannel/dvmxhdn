@@ -55,41 +55,45 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
-// Add click effect to CTA button
-document.querySelector('.cta-button').addEventListener('click', function (e) {
-    const ripple = document.createElement('span');
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
+// Add click effect to CTA button - FIXED
+const ctaButton = document.querySelector('.cta-button');
+if (ctaButton) {
+    ctaButton.addEventListener('click', function (e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
 
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
 
-    this.appendChild(ripple);
+        this.appendChild(ripple);
 
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
-});
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+}
 
 // Add floating animation delay to course cards
 document.querySelectorAll('.course-card').forEach((card, index) => {
     card.style.animationDelay = (index * 0.5) + 's';
 });
 
-// Back to Top button functionality
+// Back to Top button functionality - FIXED
 const backToTopBtn = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
-});
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+}
 
 // Mobile menu toggle - FIXED VERSION
 const menuToggle = document.querySelector('.menu-toggle');
