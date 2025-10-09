@@ -205,29 +205,24 @@
 	
 	<section id="contact" class="contact">
 		<div class="container">
-			<h2 class="section-title" style="color: white;">Thông tin liên hệ</h2>
-			<p style="font-size: 1.2rem; margin-bottom: 2rem;">Chúng tôi luôn sẵn sàng hỗ trợ</p>
-			
-			<div class="contact-info">
-				<div class="contact-item fade-in">
-					<i class="fab fa-facebook-square"></i>
-					<h3>Facebook</h3>
-					<a href="https://www.facebook.com/mxhdn.xyz/" target="_blank">Dịch Vụ Mạng Xã Hội Đà Nẵng</a>
+			<h2 class="section-title" style="color: white;">Liên hệ với chúng tôi</h2>
+			<p style="font-size: 1.2rem; margin-bottom: 2rem;">Sẵn sàng hỗ trợ bạn 24/7</p>
+			<form
+				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc2ecFWwR06fFmIl_AO_g_jOEaFTVn3nI9KpFt5dXH8dftsBg/formResponse"
+				method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+				<div class="form-group">
+					<input type="text" name="entry.182598316" placeholder="Họ và tên" required>
 				</div>
-				
-				<div class="contact-item fade-in">
-					<i class="fas fa-phone-alt"></i>
-					<h3>Zalo / Phone</h3>
-					<a href="https://zalo.me/0333110304" target="_blank">0333 110 304</a>
+				<div class="form-group">
+					<input type="email" name="entry.2065709390" placeholder="Email" required>
 				</div>
-				
-				<div class="contact-item fade-in">
-					<i class="fas fa-clock"></i>
-					<h3>Thời gian làm việc</h3>
-					<p style="color: white; font-size: 1.1rem; margin: 0;">17h30 - 22h30 hàng ngày</p>
-					<p style="color: white; font-size: 0.9rem;">(Kể cả Lễ, Tết và cuối tuần)</p>
+				<div class="form-group">
+					<textarea name="entry.2053401779" placeholder="Nội dung" required></textarea>
 				</div>
-			</div>
+				<button type="submit" class="cta-button">Gửi tin nhắn</button>
+			</form>
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+				onload="if(submitted) {alert('Cảm ơn bạn đã liên hệ!');}"></iframe>
 		</div>
 	</section>
 
